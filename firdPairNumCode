@@ -1,0 +1,20 @@
+function findPairForSum(array, sum) {
+        
+  var arrayPair = [];
+  var firstInt;
+  var secondInt;  
+  
+  for (i = 0; i < array.length; i++) {
+    firstInt = array[i];
+    for (k = 0; k < array.length; k++) {
+      secondInt = array[k];
+      if (firstInt !== secondInt && sum === firstInt + secondInt) {
+        arrayPair.push(firstInt, secondInt);
+        return arrayPair;
+      }
+    }
+  }
+}
+
+var pair = findPairForSum([3, 34, 4, 12, 5, 2], 9);
+console.log(pair); // --> [4, 5]
